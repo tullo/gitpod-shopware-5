@@ -3,7 +3,11 @@ tasks:
       docker-compose pull
   - command: |
       docker-compose up
-
+  - name: Shopware 5
+    command: >
+        cd $GITPOD_REPO_ROOT;
+        cd src;
+        ls -lart
 
 ports:
   - port: 5000
@@ -16,7 +20,3 @@ ports:
     onOpen: ignore
   - port: 9600
     onOpen: ignore
-
-vscode:
-  extensions:
-    - ms-azuretools.vscode-docker
