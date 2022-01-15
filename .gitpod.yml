@@ -1,5 +1,6 @@
 image:
   file: .gitpod.Dockerfile
+  context: apache
 tasks:
   - init: |
       docker-compose pull
@@ -30,7 +31,6 @@ ports:
     name: mysql
     onOpen: ignore
 
-  - port: 80
-    visibility: public
-    onOpen: open-browser
+  - port: 8001
     name: apache
+    onOpen: open-preview
