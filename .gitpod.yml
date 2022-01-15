@@ -1,24 +1,17 @@
 image:
   file: .gitpod.Dockerfile
-#tasks:
-#  - init: |
-#      docker-compose pull
-#  - command: |
-#      docker-compose up
-#  - name: Shopware 5
-#    command: >
-#        cd $GITPOD_REPO_ROOT;
-#        cd src;
-#        ls -lart
+tasks:
+  - init: |
+      docker-compose pull
+  - command: |
+      docker-compose up
+  - name: Shopware 5
+    command: |
+        cd $GITPOD_REPO_ROOT;
+        git clone https://github.com/shopware/shopware.git --depth=1
+        cd shopware;
+        ls -lart
 
-#ports:
-#  - port: 5000
-#    onOpen: ignore
-#  - port: 5601
-#    onOpen: open-browser
-#  - port: 9200
-#    onOpen: open-preview
-#  - port: 9300
-#    onOpen: ignore
-#  - port: 9600
-#    onOpen: ignore
+ports:
+  - port: 3306
+    onOpen: ignore
