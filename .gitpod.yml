@@ -15,13 +15,13 @@ tasks:
       DB_HOST: 0.0.0.0
       DB_NAME: shopware
       DB_PORT: 3306
-      SW_HOST: $(gp url)
       SW_BASE_PATH: ""
     command: |
-      env | grep -v GITPOD | grep -v LS_COLORS | grep -v THEIA | grep -v GP_
       cd $GITPOD_REPO_ROOT;
       git clone https://github.com/shopware/shopware.git --depth=1
       cd shopware;
+      export SW_HOST=$(gp url)
+      env | grep -v GITPOD | grep -v LS_COLORS | grep -v THEIA | grep -v GP_
       make init
 
 ports:
