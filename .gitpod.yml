@@ -15,15 +15,18 @@ tasks:
       SW_HOST: $(gp url)
       SW_BASE_PATH: ""
     command: |
+        env | grep -v GITPOD | grep -v LS_COLORS | grep -v THEIA | grep -v GP_
         cd $GITPOD_REPO_ROOT;
         git clone https://github.com/shopware/shopware.git --depth=1
         cd shopware;
-        ls -lart
+        make init
 
 ports:
   - port: 3306
     visibility: private
     name: mysql
+    onOpen: ignore
+
   - port: 80
     visibility: public
     onOpen: open-browser
