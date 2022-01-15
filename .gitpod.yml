@@ -20,7 +20,7 @@ tasks:
       cd $GITPOD_REPO_ROOT;
       git clone https://github.com/shopware/shopware.git --depth=1
       cd shopware;
-      export SW_HOST=$(gp url)
+      export SW_HOST=$HOSTNAME
       env | grep -v GITPOD | grep -v LS_COLORS | grep -v THEIA | grep -v GP_
       make init
 
