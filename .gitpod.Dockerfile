@@ -41,6 +41,9 @@ RUN add-apt-repository -y ppa:ondrej/php \
         php7.4-zip
 RUN install-packages \
     composer
+
+COPY apache2/php.ini /etc/php/7.4/apache2/php.ini
+
 #    && ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load \
 #    && chown -R gitpod:gitpod /etc/apache2 /var/run/apache2 /var/lock/apache2 /var/log/apache2
 #COPY --chown=gitpod:gitpod apache2/ /etc/apache2/
