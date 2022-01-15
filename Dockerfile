@@ -22,10 +22,9 @@ RUN add-apt-repository -y ppa:ondrej/php \
         php7.3-sqlite3 \
         php7.3-tokenizer \
         php7.3-xml \
-        php7.3-zip \
-    && mkdir -p /var/run/nginx \
-    && ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load \
-    && chown -R gitpod:gitpod /etc/apache2 /var/run/apache2 /var/lock/apache2 /var/log/apache2
+        php7.3-zip
+#    && ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load \
+#    && chown -R gitpod:gitpod /etc/apache2 /var/run/apache2 /var/lock/apache2 /var/log/apache2
 #COPY --chown=gitpod:gitpod apache2/ /etc/apache2/
 
 ## The directory relative to your git repository that will be served by Apache
