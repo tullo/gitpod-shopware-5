@@ -6,6 +6,14 @@ tasks:
   - command: |
       docker-compose up
   - name: Shopware 5
+    env:
+      DB_USER: root
+      DB_PASSWORD: gitpod
+      DB_HOST: 0.0.0.0
+      DB_NAME: shopware
+      DB_PORT: 3306
+      SW_HOST: localhost
+      SW_BASE_PATH: ""
     command: |
         cd $GITPOD_REPO_ROOT;
         git clone https://github.com/shopware/shopware.git --depth=1
