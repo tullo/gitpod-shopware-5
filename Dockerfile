@@ -28,7 +28,6 @@ RUN add-apt-repository -y ppa:ondrej/php \
     && chown -R gitpod:gitpod /etc/apache2 /var/run/apache2 /var/lock/apache2 /var/log/apache2 \
     && chown -R gitpod:gitpod /etc/nginx /var/run/nginx /var/lib/nginx/ /var/log/nginx/
 COPY --chown=gitpod:gitpod apache2/ /etc/apache2/
-COPY --chown=gitpod:gitpod nginx /etc/nginx/
 
 ## The directory relative to your git repository that will be served by Apache
 ENV APACHE_DOCROOT_IN_REPO="public"
