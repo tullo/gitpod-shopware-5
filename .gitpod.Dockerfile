@@ -43,6 +43,7 @@ RUN install-packages \
     composer
 
 COPY apache2/php.ini /etc/php/7.4/apache2/php.ini
+COPY apache2/apache2.conf /etc/apache2/
 
 #    && ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load \
 #    && chown -R gitpod:gitpod /etc/apache2 /var/run/apache2 /var/lock/apache2 /var/log/apache2
