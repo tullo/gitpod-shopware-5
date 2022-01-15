@@ -3,13 +3,13 @@ image:
 tasks:
   - init: |
       docker-compose pull
-  - command: |
-      docker-compose up
-  - name: Shopware 5
-    command: >
-        cd $GITPOD_REPO_ROOT;
-        cd src;
-        ls -lart
+#  - command: |
+#      docker-compose up
+#  - name: Shopware 5
+#    command: >
+#        cd $GITPOD_REPO_ROOT;
+#        cd src;
+#        ls -lart
 
 ports:
   - port: 5000
