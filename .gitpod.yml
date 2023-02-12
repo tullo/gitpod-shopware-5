@@ -6,7 +6,7 @@ tasks:
       docker-compose pull
   - command: |
       docker-compose up -d
-      docker-compose exec mysql mysqladmin ping mysqladmin ping -h 0.0.0.0 --password=gitpod
+      docker-compose exec mysql mysqladmin ping -h 0.0.0.0 --password=gitpod
       gp sync-done db
   - name: Shopware 5
     init: gp sync-await db
